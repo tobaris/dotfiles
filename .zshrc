@@ -157,7 +157,7 @@ function title {
 }
 
 # git 利用時にvimのパスを設定
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 
 # zsh起動時にtmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
