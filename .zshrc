@@ -6,7 +6,10 @@
 autoload -U compinit
 compinit
 
-## 入力しているコマンド名が間違っている場合にもしかして：を出す。
+# Emacs風キーバインド viがいいひとは -vで
+bindkey -e
+
+# 入力しているコマンド名が間違っている場合にもしかして：を出す。
 setopt correct
 
 # ビープを鳴らさない
@@ -17,6 +20,9 @@ setopt prompt_subst
 
 ## ^Dでログアウトしない。
 setopt ignoreeof
+
+# 日本語を使用
+export LANG=ja_JP.UTF-8
 
 ## バックグラウンドジョブが終了したらすぐに知らせる。
 setopt no_tify
@@ -98,6 +104,9 @@ setopt hist_ignore_dups
 # 開始と終了を記録
 setopt EXTENDED_HISTORY
 
+# 他のターミナルとヒストリーを共有
+setopt share_history
+
 # ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
 setopt hist_ignore_all_dups
 
@@ -125,6 +134,15 @@ setopt inc_append_history
 # インクリメンタルからの検索
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
+
+# historyに日付を表示
+alias h='fc -lt '%F %T' 1'
+alias cp='cp -i'
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias ..='c ../'
+alias back='pushd'
+alias diff='diff -U1'
 
 # -------------------------------------
 # その他
