@@ -344,6 +344,8 @@ set noerrorbells visualbell t_vb=
 set clipboard+=unnamed,autoselect
 set mouse=a
 set whichwrap=b,s,h,l,<,>,[,]
+" Marker embedded folding
+set foldmethod=marker
 
 " template
 augroup templateGroup
